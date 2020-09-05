@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/show'
+
   devise_scope :user do
     root 'devise/sessions#new'
   end
