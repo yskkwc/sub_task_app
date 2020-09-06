@@ -9,6 +9,10 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'devise'
 # Use bootstrap
 gem 'bootstrap-sass'
+# Use facebooklogin
+gem 'omniauth-facebook'
+# Use .env
+gem 'dotenv-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
