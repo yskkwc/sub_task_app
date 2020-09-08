@@ -6,16 +6,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Photo app", users_path, id: "logo" %>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
       <% if user_signed_in? %>
+        <%= link_to "Photo app", users_path, id: "logo" %>
+      <% else %>
+        <%= link_to "Photo app", root_path, id: "logo" %>
+      <% end %>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "home", users_path %></li>
+        <li><%= link_to "contacts", contact_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "profile", '/users/:id' %></li><!--あとで直す -->
+        <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
       <% else %>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
