@@ -17,20 +17,23 @@
       <ul class="nav navbar-nav">
         <li class="active">
           <% if user_signed_in? %>
-            <%= link_to 'home', users_path %>
+            <%= link_to 'Home', users_path %>
           <% else %>
-            <%= link_to 'home', root_path %>
+            <%= link_to 'Home', root_path %>
           <% end %>
         </li>
-        <li><%= link_to 'contacts', contact_path %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to 'profile', user_path(current_user) %></li>
-          <li><%= link_to 'logout',  destroy_user_session_path, method: :delete %></li>
-        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Notice',  '#' %></li>
+        <li><%= link_to 'Mypage', user_path(current_user) %></li>
+        <li><%= link_to 'Upload',  '#' %></li>
+        <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"} %></li>
+      <% else %>
+        <li><%= link_to 'Contact', contact_path %></li>
         <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <% end %>
       </ul>
     </div>
   </div>
