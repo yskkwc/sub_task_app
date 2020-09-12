@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    #devise userのストロングパラメータ
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    # sign_up時にnameキーのパラメーターを追加で許可する
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
+    # sign_up時にusername/nameキーのパラメーターを追加で許可する
   end
 end
