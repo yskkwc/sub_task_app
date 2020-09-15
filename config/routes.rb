@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   }
 
   resources :users
+  # パスワード変更ページ
+  get   '/edit_password'   => 'users#password_edit'
+  patch '/update_password' => 'users#password_update'
+  put   '/update_password' => 'users#password_update'
 
   get '/policy'  => 'homes#policy'
   get '/contact' => 'homes#contact'
