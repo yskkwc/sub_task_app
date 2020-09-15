@@ -10,7 +10,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  def log_in( user )
+  def log_in(user)
     if integration_test?
       #use warden helper
       login_as(user, :scope => :user)

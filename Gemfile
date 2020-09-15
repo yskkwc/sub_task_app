@@ -5,6 +5,8 @@ ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+# Use Haml for flash messages
+gem 'haml-rails'
 # Use devise
 gem 'devise'
 # Use jquery

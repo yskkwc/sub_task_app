@@ -1,4 +1,4 @@
 john:
-  name:  "john"
-  email: "john@example.com"
+  name:     "john micheal"
+  username: "john"
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
