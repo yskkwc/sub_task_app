@@ -7,9 +7,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @user = users(:john)
     login_as(@user, scope: :user)
   end
-  test "should get new" do
-    get new_user_registration_path
-    assert_response :success
-  end
-
 end
