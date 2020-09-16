@@ -8,7 +8,6 @@ devise :database_authenticatable, :registerable,
 validates :name, presence: true,
                   length: { maximum: 50 }
 validates :username, presence: true,
-                      uniqueness: true,
                       length: { maximum: 50 }
 
   def self.from_omniauth(auth)

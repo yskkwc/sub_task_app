@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   }
 
   resources :users
+  resources :microposts, only: [:new, :create, :destroy]
   # パスワード変更ページ
-  get   '/edit_password'   => 'users#password_edit'
-  patch '/update_password' => 'users#password_update'
-  put   '/update_password' => 'users#password_update'
+  get   '/edit_password'   => 'users#edit_password'
+  patch '/update_password' => 'users#update_password'
+  put   '/update_password' => 'users#update_password'
 
   get '/policy'  => 'homes#policy'
   get '/contact' => 'homes#contact'

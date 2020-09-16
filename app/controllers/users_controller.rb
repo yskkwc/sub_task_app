@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
-  def password_edit
+  def edit_password
   end
-  def password_update
+  def update_password
     if current_user.update_with_password(user_params)
       sign_in(current_user, bypass: true)
       redirect_to users_path, notice: "パスワードを変更しました。"

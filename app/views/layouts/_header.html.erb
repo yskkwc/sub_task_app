@@ -27,7 +27,7 @@
       <% if user_signed_in? %>
         <li><%= link_to 'Notice',  '#' %></li>
         <li><%= link_to 'Mypage', user_path(current_user) %></li>
-        <li><%= link_to 'Upload',  '#' %></li>
+        <li><%= link_to 'Upload',  new_micropost_path %></li>
         <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"} %></li>
       <% else %>
         <li><%= link_to 'Contact', contact_path %></li>
