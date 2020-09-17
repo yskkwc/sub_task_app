@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to users_path, notice: "パスワードを変更しました。"
     else
       flash.now[:alert] = "パスワード変更が失敗しました。再入力してください。"
-      render 'password_edit'
+      render 'edit_password'
     end
   end
 
