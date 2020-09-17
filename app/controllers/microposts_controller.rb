@@ -10,8 +10,8 @@ class MicropostsController < ApplicationController
       flash[:notice] = "Micropost created!"
       redirect_to users_path
     else
-      flash.now[:alert] = "投稿が出来ませんでした。"
-      render 'user/user.id'
+      @feed_items = current_user.feed.paginate(page: params[:page])
+      render 'users/index'
     end
   end
 

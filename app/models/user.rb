@@ -31,4 +31,8 @@ validates :username, presence: true,
   def will_save_change_to_email?
     false
   end
+
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
 end
