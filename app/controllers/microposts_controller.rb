@@ -2,13 +2,14 @@ class MicropostsController < ApplicationController
   before_action :correct_user,   only: :destroy
 
   def new
+    @user = current_user
     @micropost = current_user.microposts.build if user_signed_in?
   end
 
   def create
     user = current_user
     @micropost = current_user.microposts.build(micropost_params)
-    @micropost.image.attach(params[:micropost][:image])
+    @micropost.post_image.attach(params[:micropost][:post_image])
     if @micropost.save
       flash[:notice] = "Micropost created!"
       redirect_to users_path
@@ -26,7 +27,7 @@ class MicropostsController < ApplicationController
 
   private
     def micropost_params
-      params.require(:micropost).permit(:content, :image)
+      params.require(:micropost).permit(:content, :post_image)
     end
 
     def correct_user

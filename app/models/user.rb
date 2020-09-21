@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 has_many :microposts, dependent: :destroy
+mount_uploader :image, ImageUploader
 
 devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable, :omniauthable,
@@ -35,4 +36,5 @@ validates :username, presence: true,
   def feed
     Micropost.where("user_id = ?", id)
   end
+
 end

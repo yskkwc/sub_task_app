@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
     # 登録時にusername/nameキーのパラメーターを追加で許可する
 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :image])
     # プロフィール編集時にusername/nameキーのパラメーターを追加で許可する
   end
 end
