@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :username, :name])
     # 登録時にusername/nameキーのパラメーターを追加で許可する
 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :image])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :username, :name, :image])
     # プロフィール編集時にusername/nameキーのパラメーターを追加で許可する
   end
 end
