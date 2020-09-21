@@ -37,6 +37,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_storage_validations (0.9.0)
+      rails (>= 5.2.0)
     activejob (6.0.3.2)
       activesupport (= 6.0.3.2)
       globalid (>= 0.3.6)
@@ -120,6 +122,9 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.0)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     jquery-rails (4.4.0)
@@ -139,6 +144,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
     mimemagic (0.3.5)
+    mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.2)
@@ -217,6 +223,8 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     ruby-progressbar (1.10.1)
+    ruby-vips (2.0.17)
+      ffi (~> 1.9)
     ruby_parser (3.15.0)
       sexp_processor (~> 4.9)
     rubyzip (2.3.0)
@@ -283,6 +291,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_storage_validations
   bootsnap (>= 1.4.2)
   bootstrap-sass
   bootstrap-will_paginate
@@ -292,9 +301,11 @@ DEPENDENCIES
   dotenv-rails
   faker
   haml-rails
+  image_processing
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)
+  mini_magick
   minitest-reporters
   omniauth-facebook
   pg (>= 0.18, < 2.0)
