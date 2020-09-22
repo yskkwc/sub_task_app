@@ -5,6 +5,8 @@ ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+# Use storage S3
+gem 'aws-sdk-s3', require: false
 # Use active_strage_validation for mircopost
 gem 'carrierwave'
 gem 'image_processing'
