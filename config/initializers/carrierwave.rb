@@ -1,13 +1,16 @@
-unless Rails.env.development? || Rails.env.test?
-  CarrierWave.configure do |config|
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
+
+CarrierWave.configure do |config|
+    config.storage :fog
+    config.fog_provider = 'fog/aws'
+    config.fog_directory  = 'rails-tuto-yskkwc' # バケット名
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: ENV['aws_access_key_id'],
-      aws_secret_access_key: ENV['aws_secret_access_key'],
-      region: 'us-east-2'
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'], # 環境変数
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], # 環境変数
+      region: 'us-east-2',
+      path_style: true
     }
-
-    config.fog_directory  = 'rails-tuto-yskkwc'
-    config.cache_storage = :fog
-  end
 end
