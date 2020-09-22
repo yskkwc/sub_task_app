@@ -5,8 +5,17 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process resize_to_fit: [200, 200]
   end
+
   version :thumb50 do
     process resize_to_fit: [50, 50]
+  end
+
+  if Rails.env.development?
+    storage :file
+  elsif Rails.env.test?
+    storage :file
+  else
+    storage :fog
   end
 
   # Choose what kind of storage to use for this uploader:
