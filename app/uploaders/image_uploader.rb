@@ -7,6 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #else
   #  storage :file
   #end
+  #あとで変更する。
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
