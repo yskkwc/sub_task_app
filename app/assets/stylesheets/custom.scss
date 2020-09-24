@@ -140,7 +140,7 @@ aside {
     }
     &:hover {
       text-decoration: none;
-      color: blue;
+      color: black;
     }
   }
   strong {
@@ -170,7 +170,7 @@ aside {
     }
   }
   .timestamp {
-    color: $gray-light;
+    color: goldenrod;
     display: block;
     margin-left: 60px;
   }
@@ -213,5 +213,13 @@ span.image {
     color: $gray-light;
     display: block;
     margin-left: 60px;
+  }
+}
+.link {
+  text-decoration: none;
+  color: gray;
+  &:hover {
+    text-decoration: none;
+    color: black;
   }
 }
