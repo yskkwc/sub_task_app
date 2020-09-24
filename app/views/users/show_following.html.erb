@@ -6,7 +6,7 @@
   <div class="col-md-6">
       <% if @users.any? %>
         <h3><%= @title %></h3>
-        <% @user.followers.each do |user| %>
+        <% @user.following.each do |user| %>
           <table>
             <li class="microposts">
               <td><%= link_to image_tag(user.image.thumb_mini.url), user_path(user) %></td>
@@ -16,7 +16,7 @@
         <% end %>
         <%= will_paginate %>
       <% else %>
-      <h3>followされているユーザーがいません。
+      <h3>followしているユーザーがいません。
       <% end %>
   </div>
 </div>
