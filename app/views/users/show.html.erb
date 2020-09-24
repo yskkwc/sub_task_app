@@ -2,9 +2,9 @@
 <div class="row">
   <aside class="col-md-4">
     <%= render 'users/shared/show_info' %>
+    <%= render 'users/shared/follow_form' %>
   </aside>
   <div class="col-md-6">
-    <%= render 'users/shared/follow_form' %>
     <% if @user.microposts.any? %>
       <h3><%= @user.name %>さんの投稿内容(<%= @user.microposts.count %>)</h3>
         <ol class="microposts">

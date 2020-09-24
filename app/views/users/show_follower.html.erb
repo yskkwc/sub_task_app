@@ -3,17 +3,16 @@
   <aside class="col-md-6">
     <%= render 'users/shared/show_info' %>
   </aside>
-  <div class="col-md-6">
+  <div class="col-md-6 follow">
       <% if @users.any? %>
         <h3><%= @title %></h3>
-        <% @user.followers.each do |user| %>
-          <table>
-            <li class="microposts">
-              <td><%= link_to image_tag(user.image.thumb_mini.url), user_path(user) %></td>
-              <td><%= user.name %></td>
-            </li>
-          </table>
-        <% end %>
+        <%= will_paginate %>
+            <% @user.followers.each do |user| %>
+              <li>
+                <%= link_to image_tag(user.image.thumb_mini.url), user_path(user) %>
+                <%= link_to user.name, user_path(user) %>
+              </li>
+            <% end %>
         <%= will_paginate %>
       <% else %>
       <h3>followされているユーザーがいません。
