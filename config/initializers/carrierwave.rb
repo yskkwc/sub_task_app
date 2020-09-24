@@ -8,8 +8,8 @@ CarrierWave.configure do |config|
     config.fog_directory  = 'sub-task-app-strage' # バケット名
     config.fog_credentials = {
       provider: 'AWS',
-      AWS_ACCESS_KEY: ENV['AWS_ACCESS_KEY_ID'],
-      AWS_SECRET_KEY: ENV['AWS_SECRET_ACCESS_KEY'],
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       AWS_REGION: 'ap-northeast-1',
       path_style: true
     }
