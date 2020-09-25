@@ -19,7 +19,7 @@ class MicropostsController < ApplicationController
     @micropost.post_image.attach(params[:micropost][:post_image])
     if @micropost.save
       flash[:notice] = "投稿しました"
-      redirect_to users_path
+      redirect_to micropost_path(@micropost.id)
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
       render 'users/index'
