@@ -12,7 +12,7 @@
   <% if @user == current_user %>
     <li>名前: <%= @user.name %></li>
     <li>ユーザーネーム: <%= @user.username %></li>
-    <li>登録時email: <%= @user.email %></li>
-    <%= link_to "プロフィールを編集/削除する", edit_user_registration_path, class: "link" %>
+    <li>登録時メールアドレス: <%= @user.email %></li>
+    <li><%= link_to "プロフィールを編集/削除する", edit_user_registration_path, class: "link" %></li>
   <% end %>
 </section>
