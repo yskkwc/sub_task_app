@@ -1,0 +1,5 @@
+<%= form_for [@micropost, @comment] do |f| %>
+  <%= f.text_field :content %>
+  <br>
+  <%= f.submit 'コメントする', class: "btn btn-light" %>
+<% end %>
