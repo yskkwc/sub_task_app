@@ -10,7 +10,7 @@ class MicropostsController < ApplicationController
     @micropost = Micropost.find(params[:id])
     @comments = @micropost.comments.order(created_at: :desc)
     @comment = Comment.new
-    @comments_page = @comments.paginate(page: params[:page])
+    @like = Like.new
   end
 
   def create

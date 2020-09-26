@@ -3,8 +3,9 @@ class UsersController < ApplicationController
   def index
     if user_signed_in?
       @user = current_user
-      @micropost  = current_user.microposts.build
+      @micropost  = current_user.microposts.build #@user投稿機能(user_idを生成)
       @feed_items = current_user.feed.paginate(page: params[:page])
+      @like = Like.new
     end
   end
 

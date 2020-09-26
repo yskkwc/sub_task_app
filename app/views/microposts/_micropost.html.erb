@@ -1,20 +1,22 @@
 <li id="micropost-<%= micropost.id %>">
-  <span class="user">
-    <%= image_tag micropost.user.image.thumb_mini.url %>
-    <%= link_to micropost.user.name, micropost.user, class: 'link' %>
-  </span>
-  <span class="content">
-    <%= micropost.content %>
-    <%= image_tag micropost.display_post_image if micropost.post_image.attached? %>
-  </span>
-  <span class="timestamp">
-    投稿日 <%= time_ago_in_words(micropost.created_at) %> ago.<br/>
-    <% if current_user == micropost.user %>
-      <%= link_to "削除する", micropost, method: :delete,
-      data: { confirm: "投稿を削除します?" }, class: "link" %>
-    <% end %>
-  </span>
-  <span>
-    <%= link_to 'コメントする', micropost_path(micropost.id), class: 'link' %>
-  </span>
+  <div class='icon'>
+    <span class="user">
+      <%= image_tag micropost.user.image.thumb_mini.url %>
+      <%= link_to micropost.user.name, micropost.user, class: 'link' %>
+    </span>
+  </div>
+  <div class='summary'>
+    <span class="content">
+      <%= micropost.content %>
+      <%= image_tag micropost.display_post_image if micropost.post_image.attached? %>
+    </span>
+    <span class="timestamp">
+      投稿日 <%= time_ago_in_words(micropost.created_at) %> ago.<br/>
+      <% if current_user == micropost.user %>
+        <%= link_to "削除する", micropost, method: :delete,
+        data: { confirm: "投稿を削除します?" }, class: "link" %>
+      <% end %><br/>
+      <%= link_to 'いいね/コメントする', micropost_path(micropost.id), class: 'link' %>
+    </span>
+  </div>
 </li>

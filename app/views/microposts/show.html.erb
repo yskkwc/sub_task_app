@@ -4,6 +4,7 @@
     <span class="content">
       <%= @micropost.content %><br/>
       <%= image_tag @micropost.display_post_image if @micropost.post_image.attached? %>
+      <%= render 'shared/like_form' %>
     </span>
   </aside>
   <div class="col-md-4 follow">

@@ -1,7 +1,7 @@
 <%= form_with(model: @micropost, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "投稿内容の紹介をしてください...", :size => "40x20" %>
+    <%= f.text_area :content, placeholder: "投稿内容の紹介をしてください...", :size => "30x20" %>
   </div>
   <span class="post_image">
     <%= f.file_field :post_image, accept: "image/jpeg,image/png" %>

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 has_many :microposts, dependent: :destroy
 has_many :comments, dependent: :destroy
+has_many :likes, dependent: :destroy
+has_many :liked_microposts, through: :likes, source: :micropost
 has_many :active_relationships, class_name: "Relationship",
                                 foreign_key: "follower_id",
                                 dependent: :destroy
@@ -61,4 +63,7 @@ validates :username, presence: true,
     following.include?(other_user)
   end
 
+  def already_liked?(micropost)
+    self.likes.exists?(micropost_id: micropost.id)
+  end
 end
