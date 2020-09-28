@@ -1,0 +1,6 @@
+<% if current_user.already_liked?(@micropost) %>
+  <p><span>お気に入り解除: </span><%=link_to @micropost.likes.count, micropost_like_path(@micropost), method: :delete, remote: true %></p>
+<% else %>
+  <p><span>お気に入り登録: </span><%=link_to @micropost.likes.count, micropost_likes_path(@micropost),method: :post,   remote: true %></p>
+<% end %>
+<p><span>お気に入り数: </span><%= @micropost.likes.count %></p>
