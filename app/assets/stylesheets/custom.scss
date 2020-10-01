@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "modules/flash";
+@import "font-awesome";
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -229,4 +230,7 @@ span.image {
     text-decoration: none;
     color: black;
   }
+}
+.file_field {
+  display: none;
 }

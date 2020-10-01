@@ -1,6 +1,13 @@
 <% if current_user.already_liked?(@micropost) %>
-  <p><span>お気に入り解除: </span><%=link_to @micropost.likes.count, micropost_like_path(@micropost), method: :delete, remote: true %></p>
+  <p>
+    <%= link_to micropost_like_path(@micropost), method: :delete, remote: true do %>
+      <i class="fa fa-heart" aria-hidden="true"></i><%= @micropost.likes.count %>
+    <% end %>
+  </p>
 <% else %>
-  <p><span>お気に入り登録: </span><%=link_to @micropost.likes.count, micropost_likes_path(@micropost),method: :post,   remote: true %></p>
+  <p>
+    <%= link_to micropost_likes_path(@micropost), method: :post, remote: true do %>
+      <i class="fa fa-heart-o" aria-hidden="true"></i><%= @micropost.likes.count %>
+    <% end %>
+  </p>
 <% end %>
-<p><span>お気に入り数: </span><%= @micropost.likes.count %></p>
