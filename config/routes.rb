@@ -13,14 +13,16 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :likes
     end
   end
+
   resources :microposts, only: [:new, :show, :create, :destroy] do
     resources :comments, only: [:create]
-    resources :likes, only: [:create, :destroy]
   end
-  resources :relationships,       only: [:create, :destroy]
+
+  resources :relationships,          only: [:create, :destroy]
+  resources :favorite_relationships, only: [:create, :destroy]
 
   # パスワード変更ページ
   get   '/edit_password'   => 'users#edit_password'

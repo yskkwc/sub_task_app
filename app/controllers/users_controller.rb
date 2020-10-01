@@ -5,7 +5,6 @@ class UsersController < ApplicationController
       @user = current_user
       @micropost  = current_user.microposts.build #@user投稿機能(user_idを生成)
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
-      @like = Like.new
     end
   end
 
@@ -39,6 +38,13 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page], per_page: 10)
     render 'show_follower'
+  end
+
+  def likes
+    @title = 'Likes'
+    @user = User.find(params[:id])
+    @microposts = @user.likes.paginate(page: params[:page])
+    render 'show_like'
   end
 
   private

@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-has_many :microposts, dependent: :destroy
-has_many :comments, dependent: :destroy
-has_many :likes, dependent: :destroy
-has_many :liked_microposts, through: :likes, source: :micropost
+has_many :microposts,             dependent: :destroy
+has_many :comments,               dependent: :destroy
+has_many :favorite_relationships, dependent: :destroy
+has_many :likes, through: :favorite_relationships, source: :micropost
 has_many :active_relationships, class_name: "Relationship",
                                 foreign_key: "follower_id",
                                 dependent: :destroy
@@ -33,19 +33,6 @@ validates :username, presence: true,
     end
   end
 
-  #メールを必要としないsignup→不要かも?
-  #def email_required?
-  #  false
-  #end
-
-  #def email_changed?
-  #  false
-  #end
-
-  #def will_save_change_to_email?
-  #  false
-  #end
-
   def feed
     following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
     Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
@@ -63,7 +50,16 @@ validates :username, presence: true,
     following.include?(other_user)
   end
 
-  def already_liked?(micropost)
-    self.likes.exists?(micropost_id: micropost.id)
+  def like(micropost)
+    likes << micropost
   end
+
+  def unlike(micropost)
+    favorite_relationships.find_by(micropost_id: micropost.id).destroy
+  end
+
+  def likes?(micropost)
+    likes.include?(micropost)
+  end
+
 end
