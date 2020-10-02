@@ -3,7 +3,6 @@
   <aside class="col-md-5">
     <%= render 'users/shared/show_info' %>
     <%= render 'users/shared/follow_form' %>
-    <ol class='microposts'><%= render 'shared/like_info' %></ol>
   </aside>
   <div class="col-md-7">
     <% if @user.microposts.any? %>

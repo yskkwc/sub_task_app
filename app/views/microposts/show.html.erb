@@ -5,9 +5,6 @@
       <%= @micropost.content %><br/>
       <%= image_tag @micropost.display_post_image if @micropost.post_image.attached? %>
     </span>
-    <div id="likes_buttons_<%= @micropost.id %>">
-      <%= render 'likes/like', locals: {micropost: @micropost} %>
-    </div>
   </aside>
   <div class="col-md-4 follow">
     <%= render 'shared/comment_form' %>
