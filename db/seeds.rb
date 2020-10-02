@@ -21,15 +21,18 @@ ad_user = User.create!(name:                   "管理者",
               )
 end
 
+
 #usersのmicropost投稿
 users = User.order(:created_at).take(10)
 30.times do
   content = Faker::Lorem.sentence(word_count: 3)
   #Fakerで:contentを生成
+  if Rails.env.production?
 
-  users.each { |user| @microposts = user.microposts.create!(content: content)
-  @microposts.post_image.attach(io: File.open('db/fixtures/crop.jpg'), filename: "crop.jpg")}
-
+  else
+    users.each { |user| @microposts = user.microposts.create!(content: content)
+    @microposts.post_image.attach(io: File.open('db/fixtures/crop.jpg'), filename: "crop.jpg")}
+  end
 end
 
 #follow/unfollow
