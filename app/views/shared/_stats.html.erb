@@ -4,18 +4,18 @@
     <strong id="following" class="stat">
       <%= @user.following.count %>
     </strong>
-    following
+    フォローしてる人
   </a>
   <a href="<%= followers_user_path(@user) %>">
     <strong id="followers" class="stat">
       <%= @user.followers.count %>
     </strong>
-    followers
+    フォローされている人
   </a>
   <a href="<%= likes_user_path(@user) %>">
       <strong id="likes" class="stat">
         <%= @user.likes.count %>
       </strong>
-      likes
+      <i class="fa fa-heart" aria-hidden="true"></i>お気に入りした投稿
   </a>
 </div>

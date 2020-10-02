@@ -8,11 +8,10 @@ class Micropost < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
   validates :post_image,
-    presence: true,
     content_type: { in: %w[image/jpeg image/gif image/png],
       message: "must be a valid image format" },
     size:         { less_than: 5.megabytes,
-      message: "should be less than 5MB" }
+      message: "should be less than 5MB" }#,presence: true
 
   mount_uploader :image, ImageUploader
 

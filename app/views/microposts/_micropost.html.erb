@@ -16,7 +16,7 @@
         <%= link_to "削除する", micropost, method: :delete,
         data: { confirm: "投稿を削除します?" }, class: "link" %>
       <% end %><br/>
-      <%= link_to 'いいね/コメントする', micropost_path(micropost.id), class: 'link' %>
+      <%= link_to 'コメントする', micropost_path(micropost.id), class: 'link' %><br/>
     </span>
     <span class="like" id="like_form_<%= micropost.id %>">
       <% if micropost.liked_by.include?(current_user) %>
