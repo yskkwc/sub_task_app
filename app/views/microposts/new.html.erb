@@ -1,16 +1,15 @@
+<% provide(:title, "Upload") %>
 <% if user_signed_in? %>
   <div class="row">
-    <div class="col-md-2">
-    </div>
-    <aside class="col-md-8">
+    <aside class="col-md-4">
       <section class="user_info">
         <%= render 'users/shared/user_info' %>
       </section>
+    </aside>
+    <div class="col-md-8">
       <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
       </section>
-    </aside>
-    <div class="col-md-2">
     </div>
   </div>
 <% end %>

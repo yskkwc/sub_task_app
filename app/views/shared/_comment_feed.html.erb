@@ -1,0 +1,10 @@
+<h2>コメント一覧</h2>
+<% @comments.each do |c| %>
+  <div>
+    <tr>
+      <td><%= c.user.name %></td>
+      <td><%= c.content %></td>
+      <td><%= c.created_at %></td>
+    </tr>
+  </div>
+<% end %>

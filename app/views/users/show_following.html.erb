@@ -5,7 +5,6 @@
   </aside>
   <div class="col-md-6 follow">
       <% if @users.any? %>
-
         <h3><%= @title %></h3>
         <%= will_paginate %>
             <% @user.following.each do |user| %>

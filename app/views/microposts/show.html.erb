@@ -1,0 +1,16 @@
+<% provide(:title, "Comment") %>
+<div class="row">
+  <aside class="col-md-8">
+    <span class="content">
+      <%= @micropost.content %><br/>
+      <%= image_tag @micropost.display_post_image if @micropost.post_image.attached? %>
+    </span>
+  </aside>
+  <div class="col-md-4 follow">
+    <% if @comments.any? %>
+        <%= render 'shared/comment_feed' %>
+    <% end %>
+    <%= render 'shared/comment_form' %>
+  </div>
+  <%= link_to "ホームへ戻る", users_path, class: 'link' %>
+</div>

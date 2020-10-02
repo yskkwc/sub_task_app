@@ -16,7 +16,9 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :microposts, only: [:new, :create, :destroy]
+  resources :microposts, only: [:new, :show, :create, :destroy] do
+    resources :comments, only: [:create]
+  end
   resources :relationships,       only: [:create, :destroy]
 
   # パスワード変更ページ
