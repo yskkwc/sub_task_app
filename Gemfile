@@ -7,6 +7,9 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use devise
 gem 'devise'
+# Use jquery
+gem 'uglifier'
+gem 'jquery-rails'
 # Use bootstrap
 gem 'bootstrap-sass'
 # Use facebooklogin

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :users, only: [:index, :show]
+  resources :users
 
+  get '/policy'  => 'homes#policy'
+  get '/contact' => 'homes#contact'
 end

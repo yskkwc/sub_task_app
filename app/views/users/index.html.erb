@@ -5,7 +5,6 @@
   <!-- ユーザーがログインしていた時の処理 -->
   <h2> 現在 <%= current_user.name %> さんがログインしています </h2>
   <h4> メールアドレス： <%= current_user.email %> </h4>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->
   <h2> 現在ログインしていません </h2>
