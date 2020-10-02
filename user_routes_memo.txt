@@ -1,17 +1,36 @@
-new_user_session         GET    /users/sign_in(.:format)      users/sessions#new
-user_session             POST   /users/sign_in(.:format)      users/sessions#create
-destroy_user_session     DELETE /users/sign_out(.:format)     users/sessions#destroy
-new_user_password        GET    /users/password/new(.:format) users/passwords#new
-edit_user_password       GET    /users/password/edit(.:format)users/passwords#edit
-user_password            PATCH  /users/password(.:format)     users/passwords#update
-                         PUT    /users/password(.:format)     users/passwords#update
-                         POST   /users/password(.:format)     users/passwords#create
-cancel_user_registration GET    /users/cancel(.:format)       users/registrations#cancel
-new_user_registration    GET    /users/sign_up(.:format)      users/registrations#new
-edit_user_registration   GET    /users/edit(.:format)         users/registrations#edit
-user_registration        PATCH  /users(.:format)              users/registrations#update
-                         PUT    /users(.:format)              users/registrations#update
-                         DELETE /users(.:format)              users/registrations#destroy
-                         POST   /users(.:format)              users/registrations#create
-users                    GET    /users(.:format)              users#index
-user                     GET    /users/:id(.:format)          users#show
+$ rails routes
+                               Prefix Verb     URI Pattern                     Controller#Action
+                                 root GET      /                               users/sessions#new
+                     new_user_session GET      /users/sign_in(.:format)        users/sessions#new
+                         user_session POST     /users/sign_in(.:format)   　　　users/sessions#create
+                 destroy_user_session DELETE   /users/sign_out(.:format)   　　 users/sessions#destroy
+user_facebook_omniauth_authorize      GET|POST /users/auth/facebook(.:format)  users/omniauth_callbacks#passthru
+user_facebook_omniauth_callback       GET|POST /users/auth/facebook/callback   users/omniauth_callbacks#facebook
+                    new_user_password GET      /users/password/new(.:format)   users/passwords#new
+                   edit_user_password GET      /users/password/edit(.:format)  users/passwords#edit
+                        user_password PATCH    /users/password(.:format)       users/passwords#update
+                                      PUT      /users/password(.:format)       users/passwords#update
+                                      POST     /users/password(.:format)       users/passwords#create
+             cancel_user_registration GET      /users/cancel(.:format)         users/registrations#cancel
+                new_user_registration GET      /users/sign_up(.:format)        users/registrations#new
+               edit_user_registration GET      /users/edit(.:format)           users/registrations#edit
+                    user_registration PATCH    /users(.:format)                users/registrations#update
+                                      PUT      /users(.:format)                users/registrations#update
+                                      DELETE   /users(.:format)                users/registrations#destroy
+                                      POST     /users(.:format)                users/registrations#create
+                                users GET      /users(.:format)                users#index
+                                      POST     /users(.:format)                users#create
+                             new_user GET      /users/new(.:format)            users#new
+                            edit_user GET      /users/:id/edit(.:format)       users#edit
+                                 user GET      /users/:id(.:format)            users#show
+                                      PATCH    /users/:id(.:format)            users#update
+                                      PUT      /users/:id(.:format)            users#update
+                                      DELETE   /users/:id(.:format)            users#destroy
+                               policy GET      /policy(.:format)               homes#policy
+                              contact GET      /contact(.:format)              homes#contact
+rails_conductor_inbound_email_reroute POST                        　　　　　　   rails/conductor/action_mailbox/reroutes#create
+                   rails_service_blob GET                                      active_storage/blobs#show
+            rails_blob_representation GET                                      active_storage/representations#show
+                   rails_disk_service GET                                      active_storage/disk#show
+            update_rails_disk_service PUT                                      active_storage/disk#update
+                 rails_direct_uploads POST                                     active_storage/direct_uploads#create
