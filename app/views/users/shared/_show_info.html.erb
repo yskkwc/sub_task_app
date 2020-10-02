@@ -1,0 +1,18 @@
+<section class="user_info">
+  <h1>
+    <%= image_tag @user.image.thumb_big.url %><br/><br/>
+    <%= @user.name %>
+  </h1>
+  <span>これまでの投稿:<%= pluralize(@user.microposts.count, '回') %></span>
+</section>
+<section class="stats">
+  <%= render 'shared/stats' %>
+</section>
+<section class="follow">
+  <% if @user == current_user %>
+    <li>名前: <%= @user.name %></li>
+    <li>ユーザーネーム: <%= @user.username %></li>
+    <li>登録時email: <%= @user.email %></li>
+    <%= link_to "プロフィールを編集/削除する", edit_user_registration_path, class: "link" %>
+  <% end %>
+</section>
