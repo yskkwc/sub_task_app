@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "modules/flash";
+@import "font-awesome";
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -175,6 +176,13 @@ aside {
     margin-left: 60px;
   }
 }
+/*    .icon {
+    float: left;
+    margin-right: 10px;
+    }
+    .summary {
+    overflow: hidden;
+    }*/
 
 aside {
   textarea {
@@ -222,4 +230,7 @@ span.image {
     text-decoration: none;
     color: black;
   }
+}
+.file_field {
+  display: none;
 }

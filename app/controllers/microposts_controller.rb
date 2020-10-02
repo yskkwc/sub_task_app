@@ -8,9 +8,9 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost = Micropost.find(params[:id])
-    @comments = @micropost.comments.order(created_at: :desc)
+    @comments = @micropost.comments.paginate(page: params[:page], per_page: 10)
     @comment = Comment.new
-    @comments_page = @comments.paginate(page: params[:page])
+    @like = Like.new
   end
 
   def create
@@ -21,7 +21,7 @@ class MicropostsController < ApplicationController
       flash[:notice] = "投稿しました"
       redirect_to micropost_path(@micropost.id)
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
       render 'users/index'
     end
   end

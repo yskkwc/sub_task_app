@@ -1,0 +1,15 @@
+<% @feed_items.each do |f| %>
+  <% if current_user.already_liked?(f) %>
+    <p>
+      <%= link_to micropost_like_path(id: f.id, micropost_id: f.id), method: :delete, remote: true do %>
+        <i class="fa fa-heart" aria-hidden="true"></i><%= f.likes.count %>
+      <% end %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to micropost_likes_path(id: f.id, micropost_id: f.id), method: :post, remote: true do %>
+        <i class="fa fa-heart-o" aria-hidden="true"></i><%= f.likes.count %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>

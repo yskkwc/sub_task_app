@@ -1,0 +1,13 @@
+<% if current_user.already_liked?(@micropost) %>
+  <p>
+    <%= link_to micropost_like_path(@micropost), method: :delete, remote: true do %>
+      <i class="fa fa-heart" aria-hidden="true"></i><%= @micropost.likes.count %>
+    <% end %>
+  </p>
+<% else %>
+  <p>
+    <%= link_to micropost_likes_path(@micropost), method: :post, remote: true do %>
+      <i class="fa fa-heart-o" aria-hidden="true"></i><%= @micropost.likes.count %>
+    <% end %>
+  </p>
+<% end %>

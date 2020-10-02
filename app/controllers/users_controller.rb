@@ -3,14 +3,15 @@ class UsersController < ApplicationController
   def index
     if user_signed_in?
       @user = current_user
-      @micropost  = current_user.microposts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      @micropost  = current_user.microposts.build #@user投稿機能(user_idを生成)
+      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
+      @like = Like.new
     end
   end
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.paginate(page: params[:page], per_page: 10)
   end
 
   def edit_password
