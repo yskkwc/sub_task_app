@@ -1,27 +1,36 @@
 class User < ApplicationRecord
-has_many :microposts,             dependent: :destroy
-has_many :comments,               dependent: :destroy
-has_many :favorite_relationships, dependent: :destroy
-has_many :likes, through: :favorite_relationships, source: :micropost
-has_many :active_relationships, class_name: "Relationship",
-                                foreign_key: "follower_id",
-                                dependent: :destroy
-has_many :passive_relationships,  class_name:  "Relationship",
-                                  foreign_key: "followed_id",
-                                  dependent:   :destroy
-has_many :following, through: :active_relationships, source: :followed
-has_many :followers, through: :passive_relationships, source: :follower
+  has_many :microposts,             dependent: :destroy
+  has_many :comments,               dependent: :destroy
+  has_many :favorite_relationships, dependent: :destroy
+  has_many :likes,                  through: :favorite_relationships,
+                                    source: :micropost
+  has_many :active_relationships,   class_name: "Relationship",
+                                    foreign_key: "follower_id",
+                                    dependent: :destroy
+  has_many :passive_relationships,  class_name:  "Relationship",
+                                    foreign_key: "followed_id",
+                                    dependent:   :destroy
+  has_many :following,              through: :active_relationships,
+                                    source: :followed
+  has_many :followers,              through: :passive_relationships,
+                                    source: :follower
+  has_many :active_notifications,   class_name: "Notification",
+                                    foreign_key: "visiter_id",
+                                    dependent: :destroy
+  has_many :passive_notifications,  class_name:"Notification",
+                                    foreign_key: "visited_id",
+                                    dependent: : destroy
 
-mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
-devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable, :omniauthable,
-        :authentication_keys => [:username]
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :validatable, :omniauthable,
+    :authentication_keys => [:username]
 
-validates :name, presence: true,
-                  length: { maximum: 50 }
-validates :username, presence: true,
-                      length: { maximum: 50 }
+  validates :name, presence: true,
+                    length: { maximum: 50 }
+  validates :username, presence: true,
+                        length: { maximum: 50 }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -61,5 +70,4 @@ validates :username, presence: true,
   def likes?(micropost)
     likes.include?(micropost)
   end
-
 end
