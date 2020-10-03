@@ -3,7 +3,7 @@
     <%= image_tag @user.image.thumb_big.url %><br/><br/>
     <%= @user.name %>
   </h1>
-  <span>これまでの投稿:<%= pluralize(@user.microposts.count, '回') %></span>
+  <span>これまでの投稿:<%= pluralize(@user.microposts.count, 'posts') %></span>
 </section>
 <section class="stats">
   <%= render 'shared/stats' %>
