@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :relationships,          only: [:create, :destroy]
   resources :favorite_relationships, only: [:create, :destroy]
+  resources :notifications,          only: [:index]
 
   # パスワード変更ページ
   get   '/edit_password'   => 'users#edit_password'
