@@ -14,9 +14,10 @@
   <div class="col-md-8">
     <h3><%= @title %></h3>
     <% if @user.likes.any? %>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
+      <%= will_paginate @microposts %>
+        <ol class="microposts">
+          <%= render @microposts %>
+        </ol>
       <%= will_paginate @microposts %>
     <% end %>
   </div>

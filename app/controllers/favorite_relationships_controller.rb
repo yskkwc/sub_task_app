@@ -2,9 +2,10 @@ class FavoriteRelationshipsController < ApplicationController
   def create
     @user = current_user
     @micropost = Micropost.find(params[:micropost_id])
+    @micropost.create_notification_by(current_user)
     current_user.like(@micropost)
     respond_to do |format|
-      format.html { redirect_back(fallback_location: root_url) }
+      format.html { redirect_back(fallback_location: users_path) }
       format.js
     end
   end
@@ -14,7 +15,7 @@ class FavoriteRelationshipsController < ApplicationController
     @micropost = FavoriteRelationship.find(params[:id]).micropost
     current_user.unlike(@micropost)
     respond_to do |format|
-      format.html { redirect_back(fallback_location: root_url) }
+      format.html { redirect_back(fallback_location: users_path) }
       format.js
     end
   end

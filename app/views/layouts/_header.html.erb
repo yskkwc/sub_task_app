@@ -25,7 +25,15 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <li><%= link_to 'Notice',  '#' %></li>
+            <li>
+              <% if unchecked_notifications.any? %>
+                <%= link_to notifications_path do %>
+                  <i class="fa fa-circle notification-circle">Notice</i>
+                <% end %>
+              <% else %>
+                <%= link_to 'Notice', notifications_path %>
+              <% end %>
+            </li>
             <li><%= link_to 'Mypage', user_path(current_user) %></li>
             <li><%= link_to 'Upload',  new_micropost_path %></li>
             <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"} %></li>

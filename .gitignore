@@ -37,3 +37,6 @@ yarn-debug.log*
 
 /.env
 /public/uploads
+
+/.user_columns_memo.txt
+/.user_routes_memo.txt

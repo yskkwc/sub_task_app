@@ -23,7 +23,11 @@ Rails.application.routes.draw do
 
   resources :relationships,          only: [:create, :destroy]
   resources :favorite_relationships, only: [:create, :destroy]
-  resources :notifications,          only: [:index]
+  resources :notifications,          only: [:index] do
+    collection do
+      delete 'destroy_all'
+    end
+  end
 
   # パスワード変更ページ
   get   '/edit_password'   => 'users#edit_password'
