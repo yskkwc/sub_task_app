@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_scope :user do
-    root 'users/sessions#new'
+    root 'homes#home'
   end
 
   devise_for :users, controllers: {
@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   put   '/update_password' => 'users#update_password'
 
   # ログイン前に閲覧可能なページ
+  get '/home'    => 'homes#home'
   get '/policy'  => 'homes#policy'
   get '/contact' => 'homes#contact'
 end
