@@ -1,25 +1,25 @@
 class User < ApplicationRecord
-  has_many :microposts,             dependent: :destroy
-  has_many :comments,               dependent: :destroy
-  has_many :favorite_relationships, dependent: :destroy
-  has_many :likes,                  through: :favorite_relationships,
-                                    source: :micropost
-  has_many :active_relationships,   class_name: "Relationship",
+  has_many :microposts,             dependent:   :destroy
+  has_many :comments,               dependent:   :destroy
+  has_many :favorite_relationships, dependent:   :destroy
+  has_many :likes,                  through:     :favorite_relationships,
+                                    source:      :micropost
+  has_many :active_relationships,   class_name:  "Relationship",
                                     foreign_key: "follower_id",
-                                    dependent: :destroy
+                                    dependent:   :destroy
   has_many :passive_relationships,  class_name:  "Relationship",
                                     foreign_key: "followed_id",
                                     dependent:   :destroy
-  has_many :following,              through: :active_relationships,
-                                    source: :followed
-  has_many :followers,              through: :passive_relationships,
-                                    source: :follower
-  has_many :active_notifications,   class_name: "Notification",
+  has_many :following,              through:     :active_relationships,
+                                    source:      :followed
+  has_many :followers,              through:     :passive_relationships,
+                                    source:      :follower
+  has_many :active_notifications,   class_name:  "Notification",
                                     foreign_key: "visiter_id",
-                                    dependent: :destroy
-  has_many :passive_notifications,  class_name:"Notification",
+                                    dependent:   :destroy
+  has_many :passive_notifications,  class_name:  "Notification",
                                     foreign_key: "visited_id",
-                                    dependent: : destroy
+                                    dependent:   :destroy
 
   mount_uploader :image, ImageUploader
 

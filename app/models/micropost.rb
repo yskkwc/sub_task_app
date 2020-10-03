@@ -3,8 +3,8 @@ class Micropost < ApplicationRecord
 
   has_many :comments,               dependent: :destroy
   has_many :favorite_relationships, dependent: :destroy
-  has_many :liked_by,               through: :favorite_relationships,
-                                    source: :user
+  has_many :liked_by,               through:   :favorite_relationships,
+                                    source:    :user
   has_many :notifications,          dependent: :destroy
 
   has_one_attached :post_image
