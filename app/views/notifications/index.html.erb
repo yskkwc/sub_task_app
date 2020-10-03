@@ -1,0 +1,18 @@
+<% provide(:title, "Notice") %>
+<div class="row">
+  <div class="col-md-12">
+    <h3>Notice</h3>
+    <% if @notifications.exists? %>
+      <%= link_to destroy_all_notifications_path, method: :delete,
+        data: { confirm: "通知を削除します" }, class: "link" do %>
+        <i class="fa fa-trash-o"></i>
+        <h7>通知を消去</h7>
+    <% end %>
+      <ol class="microposts">
+        <%= render @notifications %>
+      </ol>
+    <% else %>
+      <p>=現在通知はありません=</p>
+    <% end %>
+  </div>
+</div>
