@@ -8,7 +8,7 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost = Micropost.find(params[:id])
-    @comments = @micropost.comments.paginate(page: params[:page], per_page: 10)
+    @comments = @micropost.comments.paginate(page: params[:page], per_page: 5)
     @comment = Comment.new
   end
 

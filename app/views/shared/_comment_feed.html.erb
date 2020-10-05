@@ -1,11 +1,12 @@
 <h2>コメント一覧</h2>
 <% @comments.each do |c| %>
   <div>
-    <tr>
-      <td><%= c.user.name %></td>
-      <td><%= c.content %></td>
-      <td><%= c.created_at %></td>
-    </tr>
+    <ol class='comments'>
+      <li><%= c.user.name %></li>
+      <li><%= c.content %></li>
+      <li><%= c.created_at %></li>
+    </ol>
   </div>
 <% end %>
-<%= will_paginate @comments %>
+<%= will_paginate @comments %><br/>
+<%= link_to "ホームへ戻る", users_path, class: 'link' %>
