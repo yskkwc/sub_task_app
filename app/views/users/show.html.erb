@@ -3,6 +3,7 @@
   <aside class="col-md-6">
     <%= render 'users/shared/show_info' %>
     <%= render 'users/shared/follow_form' %>
+    <%= link_to "ホームへ戻る", users_path, class: 'link' %>
   </aside>
   <div class="col-md-6">
     <% if @user.microposts.any? %>

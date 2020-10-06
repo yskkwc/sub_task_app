@@ -11,5 +11,6 @@
     <% if @comments.any? %>
         <%= render 'shared/comment_feed' %>
     <% end %>
+    <%= link_to "ホームへ戻る", users_path, class: 'link' %>
   </div>
 </div>

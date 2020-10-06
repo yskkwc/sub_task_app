@@ -11,7 +11,7 @@
             <% @user.followers.each do |user| %>
               <li>
                 <%= link_to image_tag(user.image.thumb_mini.url), user_path(user) %>
-                <%= link_to user.username, user_path(user) %>
+                <%= link_to user.username, user_path(user), class:'link' %>
               </li>
             <% end %>
         <%= will_paginate %>
