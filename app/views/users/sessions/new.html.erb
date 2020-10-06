@@ -1,27 +1,28 @@
 <% provide(:title, "Login") %>
-
-<h2>Login</h2>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<%= render "shared/error_messages", resource: resource, object: f.object %>
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+<div class='login'>
+  <h3>Login</h3>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "shared/error_messages", resource: resource, object: f.object %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :username %><br />
+      <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "ログイン", class:'btn btn-outline-secondary touroku' %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Login" %>
-  </div>
-<% end %>
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+</div>

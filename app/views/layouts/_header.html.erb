@@ -1,7 +1,7 @@
 <header>
-  <nav class="navbar navbar-fixed-top navbar-default navbar-left">
-    <div class="container-fluid">
-      <div class="navbar-header">
+  <nav class="navbar navbar-fixed-top navbar-default navbar-left header">
+    <div class="container-fluid header-fluid">
+      <div class="navbar-header header-nav">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -14,7 +14,7 @@
         <% end %>
       </div>
       <div class="collapse navbar-collapse navbar-right" id="myNavbar">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav header-ul">
           <li class="active">
             <% if user_signed_in? %>
               <%= link_to 'Home', users_path %>
@@ -23,7 +23,7 @@
             <% end %>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right header-ul">
           <% if user_signed_in? %>
             <li>
               <% if unchecked_notifications.any? %>

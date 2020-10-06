@@ -1,6 +1,8 @@
 <% provide(:title, "Sign-up") %>
-<h2>Sign up</h2>
-<%= render "users/shared/loginform" %>
-</br>
-<%= link_to "利用規約", policy_path %></br>
-<%= render "users/shared/links" %>
+<div class='signup'>
+  <h3>Signup</h3>
+  <%= render "users/shared/loginform" %>
+  </br>
+  <%= link_to "利用規約", policy_path, class:'link-top' %></br>
+  <%= render "users/shared/links" %>
+</div>

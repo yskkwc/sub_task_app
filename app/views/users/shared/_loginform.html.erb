@@ -7,7 +7,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :username, "username(※ログインに使用します。)" %><br />
+    <%= f.label :username, "ユーザーネーム(※ログインに使用します。)" %><br />
     <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
   </div>
 
@@ -30,6 +30,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "登録する" %>
+    <%= f.submit "登録する", class:'btn btn-outline-secondary, touroku' %>
   </div>
 <% end %>

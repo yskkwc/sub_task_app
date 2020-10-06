@@ -277,3 +277,57 @@ span.image {
     color: red;
   }
 }
+.link-top{
+  text-decoration: none;
+  color: darkblue;
+  &:hover {
+    text-decoration: none;
+    color: darkorange;
+  }
+}
+.link-omni{
+  color: darkblue;
+  &:hover {
+    text-decoration: none;
+    color: darkorange;
+  }
+}
+
+.topimg{
+width:100%;
+max-width: 100%;
+height: auto;
+}
+
+.signup{
+  text-align: center;
+  background-image: image-url("still-life.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: burlywood;
+  .touroku{
+    color: black;
+    &:hover {
+    text-decoration: none;
+    color: darkorange;
+    background-color: lightgray;
+    }
+  }
+}
+.login{
+  text-align: center;
+  background-image: image-url("old.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: burlywood;
+  .touroku{
+    color: black;
+    &:hover {
+    text-decoration: none;
+    color: darkorange;
+    background-color: lightgray;
+    }
+  }
+}
