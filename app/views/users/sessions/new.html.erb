@@ -4,7 +4,7 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= render "shared/error_messages", resource: resource, object: f.object %>
     <div class="field">
-      <%= f.label :username %><br />
+      <%= f.label :username, 'ユーザーネーム' %><br />
       <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
     </div>
 

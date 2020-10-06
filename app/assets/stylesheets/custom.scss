@@ -279,19 +279,31 @@ span.image {
 }
 .link-top{
   text-decoration: none;
-  color: darkblue;
+  color: darkgray;
   &:hover {
     text-decoration: none;
     color: darkorange;
   }
 }
+.link-login{
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: darkorange;
+  }
+}
+
 .link-omni{
-  color: darkblue;
+  padding: 8px 18px;
+  border-radius:30px;
+  background-color: #55acee;
+  color: white;
   &:hover {
     text-decoration: none;
-    color: darkorange;
+    color: gainsboro;
+    }
   }
-}
 
 .topimg{
 width:100%;
@@ -306,6 +318,7 @@ height: auto;
   background-position: center center;
   background-size: cover;
   color: burlywood;
+
   .touroku{
     color: black;
     &:hover {
@@ -321,7 +334,7 @@ height: auto;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: burlywood;
+  color: darkgray;
   .touroku{
     color: black;
     &:hover {
