@@ -2,6 +2,7 @@
 <div class="row">
   <aside class="col-md-6">
     <%= render 'users/shared/stats_info' %>
+    <%= link_to '全てのユーザーをみる', index_all_users_path, class:'link' %>
   </aside>
   <div class="col-md-6 follow">
       <% if @users.any? %>
@@ -10,7 +11,7 @@
             <% @user.following.each do |user| %>
               <li>
                 <%= link_to image_tag(user.image.thumb_mini.url), user_path(user) %>
-                <%= link_to user.name, user_path(user) %>
+                <%= link_to user.username, user_path(user) %>
               </li>
             <% end %>
         <%= will_paginate %>

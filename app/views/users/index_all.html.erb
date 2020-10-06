@@ -1,0 +1,17 @@
+<% provide(:title, 'alluser') %>
+<div class="row">
+  <aside class="col-md-6">
+    <%= render 'users/shared/stats_info' %>
+  </aside>
+  <div class="col-md-6">
+  <h3>All users</h3>
+  <%= will_paginate @users %>
+    <% @users.each do |user| %>
+        <ol class='all'>
+          <li><%= link_to image_tag(user.image.thumb_mini.url), user_path(user) %></li>
+          <li><%= link_to user.username, user_path(user), class:'link' %></li>
+        </ol>
+    <% end %>
+  <%= will_paginate @users %><br/>
+  <%= link_to "ホームへ戻る", users_path, class: 'link' %>
+</div>

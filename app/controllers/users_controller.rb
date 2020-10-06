@@ -47,6 +47,11 @@ class UsersController < ApplicationController
     render 'show_like'
   end
 
+  def index_all
+    @user = current_user
+    @users = User.all.paginate(page: params[:page], per_page: 10)
+  end
+
   private
   def user_params
     params.require(:user).permit(:password, :password_confirmation, :current_password)
