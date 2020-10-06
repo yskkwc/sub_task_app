@@ -55,4 +55,11 @@ class Micropost < ApplicationRecord
     notification.save if notification.valid?
   end
 
+  def self.search(search)
+    if search
+      Micropost.where(['content LIKE ?', "%#{search}%"])
+    else
+      Micropost.all
+    end
+  end
 end

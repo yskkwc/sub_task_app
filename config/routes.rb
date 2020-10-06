@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   }
 
   resources :users do
+    collection do
+      get 'index_all'
+    end
     member do
       get :following, :followers, :likes
     end
@@ -19,6 +22,9 @@ Rails.application.routes.draw do
 
   resources :microposts, only: [:new, :show, :create, :destroy] do
     resources :comments, only: [:create]
+    collection do
+      get 'search'
+    end
   end
 
   resources :relationships,          only: [:create, :destroy]
