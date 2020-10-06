@@ -1,33 +1,36 @@
 # README
-[sub_task_app]
+#sub_task_app
 インスタグラムのクローンアプリ
 写真の投稿、共有、相互フォローイング、お気に入り機能
 
-* versions
-  rails 6.0.3.2
-  ruby  2.7.1
+# versions
+  *rails 6.0.3.2
+  *ruby  2.7.1
 
-* 追加したgem
-  gem 'font-awesome-rails'
-  gem 'pry-rails'
-  gem 'aws-sdk-s3', require: false
-  gem 'carrierwave'
-  gem 'fog-aws'
-  gem 'image_processing'
-  gem 'mini_magick'
-  gem 'active_storage_validations'
-  gem 'faker'
-  gem 'will_paginate'
-  gem 'bootstrap-will_paginate'
-  gem 'haml-rails'
-  gem 'devise'
-  gem 'uglifier'
-  gem 'jquery-rails'
-  gem 'bootstrap-sass'
-  gem 'omniauth-facebook'
-  gem 'dotenv-rails'
+# Database creation
+  *pg (1.2.3)
 
-* Usage
+# 追加したgem
+  *gem 'font-awesome-rails'
+  *gem 'pry-rails'
+  *gem 'aws-sdk-s3'
+  *gem 'carrierwave'
+  *gem 'fog-aws'
+  *gem 'image_processing'
+  *gem 'mini_magick'
+  *gem 'active_storage_validations'
+  *gem 'faker'
+  *gem 'will_paginate'
+  *gem 'bootstrap-will_paginate'
+  *gem 'haml-rails'
+  *gem 'devise'
+  *gem 'uglifier'
+  *gem 'jquery-rails'
+  *gem 'bootstrap-sass'
+  *gem 'omniauth-facebook'
+  *gem 'dotenv-rails'
+
+# Usage
   signupして使用。テストアプリのため、devise#confirmableは使用してませんので
   emailは適当な物でログインできます。しかしpasswordを忘れた場合に復帰する手段が
   なくなります。
@@ -39,18 +42,15 @@
   今後閲覧制限機能、プロフィールのタグ付け機能、画像の加工機能などを拡充し、
   ソーシャリビリティ充実に努めます。
 
-* Database creation
-  pg (1.2.3)
-
-* copyright
+# copyright
   使用している画像は全てフリー素材です。
 
-* How to run the test suite
+# How to run the test suite
   minitestを中途な状態まで使用しましたが、deviseとの連携がうまく
   行えず、進捗状況を踏まえ、全削除しています。
   できればテスト駆動開発を行いたかったのですが
 
-* Deployment instructions
+# Deployment instructions
   https://intense-temple-67818.herokuapp.com/
 
 # Author
