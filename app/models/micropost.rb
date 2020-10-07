@@ -16,7 +16,8 @@ class Micropost < ApplicationRecord
     content_type: { in: %w[image/jpeg image/gif image/png],
       message: "must be a valid image format" },
     size:         { less_than: 5.megabytes,
-      message: "should be less than 5MB" }#,presence: true
+      message: "should be less than 5MB" },presence: true
+    #投稿には画像を必須とする
 
   mount_uploader :image, ImageUploader
 
