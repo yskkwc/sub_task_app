@@ -1,34 +1,34 @@
 # README
-#sub_task_app
+* sub_task_app
 インスタグラムのクローンアプリ
 写真の投稿、共有、相互フォローイング、お気に入り機能
 
 # versions
-  *rails 6.0.3.2
-  *ruby  2.7.1
+  * rails 6.0.3.2
+  * ruby  2.7.1
 
 # Database creation
-  *pg (1.2.3)
+  * pg (1.2.3)
 
 # 追加したgem
-  *gem 'font-awesome-rails'
-  *gem 'pry-rails'
-  *gem 'aws-sdk-s3'
-  *gem 'carrierwave'
-  *gem 'fog-aws'
-  *gem 'image_processing'
-  *gem 'mini_magick'
-  *gem 'active_storage_validations'
-  *gem 'faker'
-  *gem 'will_paginate'
-  *gem 'bootstrap-will_paginate'
-  *gem 'haml-rails'
-  *gem 'devise'
-  *gem 'uglifier'
-  *gem 'jquery-rails'
-  *gem 'bootstrap-sass'
-  *gem 'omniauth-facebook'
-  *gem 'dotenv-rails'
+  * gem 'font-awesome-rails'
+  * gem 'pry-rails'
+  * gem 'aws-sdk-s3'
+  * gem 'carrierwave'
+  * gem 'fog-aws'
+  * gem 'image_processing'
+  * gem 'mini_magick'
+  * gem 'active_storage_validations'
+  * gem 'faker'
+  * gem 'will_paginate'
+  * gem 'bootstrap-will_paginate'
+  * gem 'haml-rails'
+  * gem 'devise'
+  * gem 'uglifier'
+  * gem 'jquery-rails'
+  * gem 'bootstrap-sass'
+  * gem 'omniauth-facebook'
+  * gem 'dotenv-rails'
 
 # Usage
   signupして使用。テストアプリのため、devise#confirmableは使用してませんので
