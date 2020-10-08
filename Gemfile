@@ -5,6 +5,35 @@ ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+# Useful icon
+gem 'font-awesome-rails'
+# For binding.pry etc.
+gem 'pry-rails'
+# Use storage S3
+gem 'aws-sdk-s3', require: false
+# Use active_strage_validation for mircopost
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'active_storage_validations'
+# Use Faker for seed.rb
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+# Use Haml for flash messages
+gem 'haml-rails'
+# Use devise
+gem 'devise'
+# Use jquery
+gem 'uglifier'
+gem 'jquery-rails'
+# Use bootstrap
+gem 'bootstrap-sass'
+# Use facebooklogin
+gem 'omniauth-facebook'
+# Use .env
+gem 'dotenv-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -31,6 +60,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+
 end
 
 group :development do
@@ -48,6 +79,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'minitest-reporters'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

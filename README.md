@@ -1,24 +1,61 @@
 # README
+* sub_task_app
+インスタグラムのクローンアプリ
+写真の投稿、共有、相互フォローイング、お気に入り機能
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# versions
+  * rails 6.0.3.2
+  * ruby  2.7.1
 
-Things you may want to cover:
+# Database creation
+  * pg (1.2.3)
 
-* Ruby version
+# 追加したgem
+  * gem 'font-awesome-rails'
+  * gem 'pry-rails'
+  * gem 'aws-sdk-s3'
+  * gem 'carrierwave'
+  * gem 'fog-aws'
+  * gem 'image_processing'
+  * gem 'mini_magick'
+  * gem 'active_storage_validations'
+  * gem 'faker'
+  * gem 'will_paginate'
+  * gem 'bootstrap-will_paginate'
+  * gem 'haml-rails'
+  * gem 'devise'
+  * gem 'uglifier'
+  * gem 'jquery-rails'
+  * gem 'bootstrap-sass'
+  * gem 'omniauth-facebook'
+  * gem 'dotenv-rails'
 
-* System dependencies
+# Usage
+  signupして使用。テストアプリのため、devise#confirmableは使用してませんので
+  emailは適当な物でログインできます。しかしpasswordを忘れた場合に復帰する手段が
+  なくなります。
+  facebook-omniauthによるログインも可能です。デフォルトですとユーザーネームが
+  facebook登録名になるので適宜登録情報は変更してください。
+  写真のアップロードに加え、140文字のコメントを記述可能。
+  検索機能が脆弱な為、現状フォロー/フォロワーを探すことが難しいですが、全てのユーザー
+  の投稿を見ることが可能です。閲覧制限の機能はありません。
+  今後閲覧制限機能、プロフィールのタグ付け機能、画像の加工機能などを拡充し、
+  ソーシャリビリティ充実に努めます。
 
-* Configuration
+# copyright
+  使用している画像は全てフリー素材です。
 
-* Database creation
+# How to run the test suite
+  minitestを中途な状態まで使用しましたが、deviseとの連携がうまく
+  行えず、進捗状況を踏まえ、全削除しています。
+  できればテスト駆動開発を行いたかったのですが
 
-* Database initialization
+# Deployment instructions
+  https://intense-temple-67818.herokuapp.com/
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Author
+* 作成者  yusuke kawachi
+* E-mail y.k.trial.serv@gmail.com
+ 
+# License
+Copyright (c) 2020, yusuke kawachi

@@ -1,0 +1,6 @@
+<h1>
+  <%= image_tag @user.image.thumb.url %><br/>
+  <%= current_user.name %>
+</h1>
+<span><%= link_to "プロフィールをみる", current_user, class: "link" %></span>
+<span><%= pluralize(current_user.microposts.count, "投稿") %></span>

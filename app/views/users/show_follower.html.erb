@@ -1,0 +1,22 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-6">
+    <%= render 'users/shared/stats_info' %>
+    <%= link_to '全てのユーザーをみる', index_all_users_path, class:'link' %>
+  </aside>
+  <div class="col-md-6 follow">
+      <% if @users.any? %>
+        <h3><%= @title %></h3>
+        <%= will_paginate %>
+            <% @user.followers.each do |user| %>
+              <li>
+                <%= link_to image_tag(user.image.thumb_mini.url), user_path(user) %>
+                <%= link_to user.username, user_path(user), class:'link' %>
+              </li>
+            <% end %>
+        <%= will_paginate %>
+      <% else %>
+      <h3>followされているユーザーがいません。
+      <% end %>
+  </div>
+</div>

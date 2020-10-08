@@ -79,7 +79,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: sub_task_app_production
   username: sub_task_app
   password: <%= ENV['SUB_TASK_APP_DATABASE_PASSWORD'] %>

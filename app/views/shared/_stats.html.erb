@@ -1,0 +1,21 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= following_user_path(@user) %>">
+    <strong id="following" class="stat">
+      <%= @user.following.count %>
+    </strong>
+    フォローしてる人
+  </a>
+  <a href="<%= followers_user_path(@user) %>">
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    フォローされている人
+  </a>
+  <a href="<%= likes_user_path(@user) %>">
+      <strong id="likes" class="stat">
+        <%= @user.likes.count %>
+      </strong>
+      <i class="fa fa-heart" aria-hidden="true"></i>お気に入りした投稿
+  </a>
+</div>

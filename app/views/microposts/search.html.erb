@@ -1,0 +1,16 @@
+<% provide(:title, "Search result"") %>
+<p>検索</p>
+<%= form_tag search_microposts_path, :method => 'get' do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+<%= will_paginate @microposts %>
+<ul class='microposts'>
+  <% @microposts.each do |micropost| %>
+    <li>
+      <%= link_to micropost.content, micropost_path(micropost.id), class: 'link' %>
+      <%= micropost.created_at %>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate @microposts %>
