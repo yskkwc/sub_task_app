@@ -45,11 +45,6 @@
 # copyright
   使用している画像は全てフリー素材です。
 
-# How to run the test suite
-  minitestを中途な状態まで使用しましたが、deviseとの連携がうまく
-  行えず、進捗状況を踏まえ、全削除しています。
-  できればテスト駆動開発を行いたかったのですが
-
 # Deployment instructions
   https://intense-temple-67818.herokuapp.com/
 
